@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dependent Select with Purchase</title>
+    <style>
+        /* Basic styles for layout and appearance */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: url('your-background-image.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header img {
+    max-width: 150px;
+    height: auto;
+}
+
+header h1 {
+    margin: 10px 0;
+}
+
+header h3 {
+    margin: 0;
+}
+
+nav {
+    background: #333;
+    color: white;
+    padding: 10px 0;
+}
+
+.nav-bar {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    margin: 0;
+}
+
+.nav-bar li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.nav-bar a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+select, input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #f1f1f1;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+.tv {
+    color: blue;
+}
+.jt {
+    background-color:#35424a
+    }
+    </style>
+</head>
+<div> 
+    
+</div>
+<body>
+    <header class="jt">
+       
+        <h1 class="tv">DataWave.NG</h1>
+        <h3 class="tv">Your trusted data partner</h3>
+    </header>
+    
+    <nav>
+        <ul class="nav-bar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <label for="networkSelect">Select Network:</label>
+        <select id="networkSelect" onchange="updatePlanSelect()">
+            <option value="">Select a network</option>
+            <option value="mtn">MTN</option>
+            <option value="airtel">Airtel</option>
+            <option value="glo">Glo</option>
+            <option value="9mobile">9Mobile</option>
+        </select>
+
+        <label for="planSelect">Select Plan:</label>
+        <select id="planSelect" onchange="updateDetails()">
+            <option value="">Select a plan</option>
+        </select>
+
+        <label for="price">Price:</label>
+        <input id="price" type="text" readonly>
+
+        <label for="validity">Validity:</label>
+        <input id="validity" type="text" readonly>
+
+        <label for="phone">Phone Number:</label>
+        <input id="phone" type="text" placeholder="Enter phone number">
+
+        <button onclick="sendPurchase()">Purchase</button>
+    </main>
+    
+    <footer>
+        <!-- Add links to social media and other platforms -->
+        <p>Follow us on 
+            <a href="https://www.facebook.com/yourpage">Facebook</a>, 
+            <a href="https://wa.me/yourwhatsappnumber">WhatsApp</a>, 
+            <a href="https://www.instagram.com/yourprofile">Instagram</a>.
+        </p>
+    </footer>
+
+    <script>
+        function updatePlanSelect() {
+            const networkSelect = document.getElementById('networkSelect').value;
+            const planSelect = document.getElementById('planSelect');
+
+            // Clear current options
+            planSelect.innerHTML = '<option value="">Select a plan</option>';
+
+            // Define options based on the network selection
+            let plans = [];
+            if (networkSelect === 'mtn') {
+                plans = [
+                    { plan: '50MB', price: '₦50', validity: 'N/A' },
+                    { plan: '100MB (1 day)', price: '₦150', validity: '1 day' },
+                    { plan: '500MB', price: '₦200', validity: '30 days' },
+                    { plan: '1GB', price: '₦300', validity: '30 days' },
+                    { plan: '2GB', price: '₦585', validity: '30 days' },
+                    { plan: '3GB', price: '₦875', validity: '30 days' },
+                    { plan: '5GB', price: '₦1500', validity: '30 days' },
+                    { plan: '10GB', price: '₦3050', validity: '30 days' },
+                    { plan: '15GB', price: '₦4400', validity: '30 days' },
+                    { plan: '20GB', price: '₦6000', validity: '30 days' },
+                    { plan: '40GB', price: '₦11300', validity: '30 days' }
+                ];
+            } else if (networkSelect === 'airtel') {
+                plans = [
+                    { plan: '500MB', price: '₦170', validity: '30 days' },
+                    { plan: '1GB', price: '₦300', validity: '30 days' },
+                    { plan: '2GB', price: '₦600', validity: '30 days' },
+                    { plan: '5GB', price: '₦2450', validity: '30 days' },
+                    { plan: '10GB', price: '₦2900', validity: '30 days' },
+                    { plan: '20GB', price: '₦6800', validity: '30 days' }
+                ];
+            } else if (networkSelect === 'glo') {
+                plans = [
+                    { plan: '500MB', price: '₦170', validity: '30 days' },
+                    { plan: '1GB', price: '₦300', validity: '30 days' },
+                    { plan: '2GB', price: '₦600', validity: '30 days' },
+                    { plan: '3GB', price: '₦890', validity: '30 days' },
+                    { plan: '5GB', price: '₦1450', validity: '30 days' },
+                    { plan: '10GB', price: '₦2950', validity: '30 days' }
+                ];
+            } else if (networkSelect === '9mobile') {
+                plans = [
+                    { plan: '500MB', price: '₦170', validity: '30 days' },
+                    { plan: '1GB', price: '₦300', validity: '30 days' },
+                    { plan: '1.5GB', price: '₦350', validity: '30 days' },
+                    { plan: '2GB', price: '₦600', validity: '30 days' },
+                    { plan: '3GB', price: '₦750', validity: '30 days' },
+                    { plan: '5GB', price: '₦2000', validity: '30 days' },
+                    { plan: '10GB', price: '₦3050', validity: '30 days' },
+                    { plan: '20GB', price: '₦5300', validity: '30 days' },
+                    { plan: '30GB', price: '₦7300', validity: '30 days' },
+                    { plan: '40GB', price: '₦11000', validity: '30 days' }
+                ];
+            }
+
+            // Populate the second select with new options
+            plans.forEach(plan => {
+                const newOption = document.createElement('option');
+                newOption.value = plan.plan.toLowerCase().replace(/\s+/g, '-');
+                newOption.textContent = `${plan.plan} - ${plan.price}`;
+                planSelect.appendChild(newOption);
+            });
+        }
+
+        function updateDetails() {
+            const planSelect = document.getElementById('planSelect').value;
+            const priceField = document.getElementById('price');
+            const validityField = document.getElementById('validity');
+
+            // Define plan details based on the selection
+            const planDetails = {
+                '50mb': { price: '₦50', validity: 'N/A' },
+                '100mb-1-day': { price: '₦150', validity: '1 day' },
+                '500mb': { price: '₦200', validity: '30 days' },
+                '1gb': { price: '₦300', validity: '30 days' },
+                '2gb': { price: '₦585', validity: '30 days' },
+                '3gb': { price: '₦875', validity: '30 days' },
+                '5gb': { price: '₦1500', validity: '30 days' },
+                '10gb': { price: '₦3050', validity: '30 days' },
+                '15gb': { price: '₦4400', validity: '30 days' },
+                '20gb': { price: '₦6000', validity: '30 days' },
+                '40gb': { price: '₦11300', validity: '30 days' },
+                '500mb': { price: '₦170', validity: '30 days' },
+                '1gb': { price: '₦300', validity: '30 days' },
+                '2gb': { price: '₦600', validity: '30 days' },
+               '5gb': { price: '₦2450', validity: '30 days' },
+                '10gb': { price: '₦2900', validity: '30 days' },
+                '20gb': { price: '₦6800', validity: '30 days' },
+                '500mb': { price: '₦170', validity: '30 days' },
+                '1gb': { price: '₦300', validity: '30 days' },
+                '2gb': { price: '₦600', validity: '30 days' },
+                '3gb': { price: '₦890', validity: '30 days' },
+                '5gb': { price: '₦1450', validity: '30 days' },
+                '10gb': { price: '₦2950', validity: '30 days' },
+                '500mb': { price: '₦170', validity: '30 days' },
+                '1gb': { price: '₦300', validity: '30 days' },
+                '1.5gb': { price: '₦350', validity: '30 days' },
+                '2gb': { price: '₦600', validity: '30 days' },
+                '3gb': { price: '₦750', validity: '30 days' },
+                '5gb': { price: '₦2000', validity: '30 days' },
+                '10gb': { price: '₦3050', validity: '30 days' },
+                '20gb': { price: '₦5300', validity: '30 days' },
+                '30gb': { price: '₦7300', validity: '30 days' },
+                '40gb': { price: '₦11000', validity: '30 days' }
+            };
+
+            // Update price and validity fields based on the plan selection
+            const details = planDetails[planSelect];
+            if (details) {
+                priceField.value = details.price;
+                validityField.value = details.validity;
+            } else {
+                priceField.value = '';
+                validityField.value = '';
+            }
+        }
+
+        function sendPurchase() {
+            const planSelect = document.getElementById('planSelect').value;
+            const priceField = document.getElementById('price').value;
+            const phoneField = document.getElementById('phone').value;
+
+            if (planSelect && priceField && phoneField) {
+                const message = `I want to purchase the ${planSelect.replace(/-/g, ' ')} plan. Price: ${priceField}. Phone Number: ${phoneField}`;
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappLink = `https://wa.me/yourwhatsappnumber?text=${encodedMessage}`;
+                window.open(whatsappLink, '_blank');
+            } else {
+                alert('Please select a plan and enter your phone number.');
+            }
+        }
+    </script>
+</body>
+</html>

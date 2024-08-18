@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Affordable and professional web design">
+    <meta name="keywords" content="web design, affordable web design, professional web design">
+    <meta name="author" content="Brad Traversy">
+    <title>DataWave.NG | Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/favicon.png">
+    
+    <style>
+        body{
+  font: 15px/1.5 Arial, Helvetica,sans-serif;
+  padding:0;
+  margin:0;
+  background-color:#f4f4f4;
+}
+
+/* Global */
+.container{
+  width:80%;
+  margin:auto;
+  overflow:hidden;
+}
+
+ul{
+  margin:0;
+  padding:0;
+}
+
+.button_1{
+  height:38px;
+  background:#e8491d;
+  border:0;
+  padding-left: 20px;
+  padding-right:20px;
+  color:#ffffff;
+}
+
+.dark{
+  padding:15px;
+  background:#35424a;
+  color:#ffffff;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+/* Header **/
+header{
+  background:#35424a;
+  color:#ffffff;
+  padding-top:30px;
+  min-height:70px;
+  border-bottom:#e8491d 3px solid;
+}
+
+header a{
+  color:#ffffff;
+  text-decoration:none;
+  text-transform: uppercase;
+  font-size:16px;
+}
+
+header li{
+  float:left;
+  display:inline;
+  padding: 0 20px 0 20px;
+}
+
+header #branding{
+  float:left;
+}
+
+header #branding h1{
+  margin:0;
+}
+
+header nav{
+  float:right;
+  margin-top:10px;
+}
+
+header .highlight, header .current a{
+  color:blue;
+  font-weight:bold;
+}
+
+header a:hover{
+  color:#cccccc;
+  font-weight:bold;
+}
+
+/* Showcase */
+#showcase{
+  min-height:400px;
+  background:url('../img/showcase.jpg') no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align:center;
+  color:#ffffff;
+}
+
+#showcase h1{
+  margin-top:100px;
+  font-size:55px;
+  margin-bottom:10px;
+}
+
+#showcase p{
+  font-size:20px;
+}
+
+/* Newsletter */
+#newsletter{
+  padding:15px;
+  color:#ffffff;
+  background:#35424a
+}
+
+#newsletter h1{
+  float:left;
+}
+
+#newsletter form {
+  float:right;
+  margin-top:15px;
+}
+
+#newsletter input[type="email"]{
+  padding:4px;
+  height:25px;
+  width:250px;
+}
+
+/* Boxes */
+#boxes{
+  margin-top:20px;
+}
+
+#boxes .box{
+  float:left;
+  text-align: center;
+  width:30%;
+  padding:10px;
+}
+
+#boxes .box img{
+  width:90px;
+}
+
+/* Sidebar */
+aside#sidebar{
+  float:right;
+  width:30%;
+  margin-top:10px;
+}
+
+aside#sidebar .quote input, aside#sidebar .quote textarea{
+  width:90%;
+  padding:5px;
+}
+
+/* Main-col */
+article#main-col{
+  float:left;
+  width:65%;
+}
+
+/* Services */
+ul#services li{
+  list-style: none;
+  padding:20px;
+  border: #cccccc solid 1px;
+  margin-bottom:5px;
+  background:#e6e6e6;
+}
+
+footer{
+  padding:20px;
+  margin-top:20px;
+  color:#ffffff;
+  background-color:#e8491d;
+  text-align: center;
+}
+
+/* Media Queries */
+@media(max-width: 768px){
+  header #branding,
+  header nav,
+  header nav li,
+  #newsletter h1,
+  #newsletter form,
+  #boxes .box,
+  article#main-col,
+  aside#sidebar{
+    float:none;
+    text-align:center;
+    width:100%;
+  }
+
+  header{
+    padding-bottom:20px;
+  }
+
+  #showcase h1{
+    margin-top:40px;
+  }
+
+  #newsletter button, .quote button{
+    display:block;
+    width:100%;
+  }
+
+  #newsletter form input[type="email"], .quote input, .quote textarea{
+    width:100%;
+    margin-bottom:5px;
+  }
+}
+body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content ul {
+            list-style: none;
+            padding: 0;
+        }
+        .dropdown-content ul li {
+            padding: 8px 16px;
+            text-align: left;
+        }
+        .dropdown-content ul li:hover {
+            background-color: #ddd;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .button_1 {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        .button_1:hover {
+            background: #555;
+        }
+        .hidden {
+            display: none;
+        }
+        
+        
+        
+        /* Purchase Data Section Styles */
+section#purchase-data {
+    background: #e9e9e9;
+    padding: 20px 0;
+}
+
+section#purchase-data h2 {
+    margin-top: 0;
+    font-size: 24px;
+    text-align: center;
+}
+
+section#purchase-data form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section#purchase-data label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+section#purchase-data select,
+section#purchase-data input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+section#purchase-data input {
+    font-size: 16px;
+    background: #f9f9f9;
+}
+
+section#purchase-data .button_1 {
+    display: block;
+    margin: 20px 0 0;
+    width: 100%;
+    background: #f4b41a;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+}
+
+section#purchase-data .button_1:hover {
+    background: #e39c15;
+}
+
+/* Hidden Class */
+.hidden {
+    display: none;
+}
+
+
+
+
+/* Basic styles for layout and appearance */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+#branding {
+    text-align: center;
+}
+
+#branding h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.highlight {
+    color: #007bff;
+}
+
+nav {
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li.current a {
+    font-weight: bold;
+}
+
+section#newsletter {
+    background: #f4f4f4;
+    padding: 20px 0;
+}
+
+section#newsletter form {
+    text-align: center;
+}
+
+section#newsletter input[type=email] {
+    width: 250px;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+section#newsletter .button_1 {
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+section#newsletter .button_1:hover {
+    background: #0056b3;
+}
+
+section#main {
+    padding: 20px 0;
+}
+
+#main-col {
+    width: 70%;
+    float: left;
+}
+
+#sidebar {
+    width: 30%;
+    float: right;
+}
+
+.dark {
+    background: #333;
+    color: white;
+    padding: 15px;
+}
+
+.dark .quote {
+    display: flex;
+    flex-direction: column;
+}
+
+.dark .quote div {
+    margin-bottom: 10px;
+}
+
+.dark .quote textarea {
+    height: 100px;
+}
+
+.dark .button_1 {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dark .button_1:hover {
+    background: #0056b3;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    clear: both;
+}
+
+button.check-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+button.check-btn:hover {
+    background: #0056b3;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+h1.page-title, #services h3, #services ul li, .dark h3 {
+    animation: fadeIn 2s ease-in-out;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">DataWave.NG</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="current"><a href="service.html">Services</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="newsletter">
+        <div class="container">
+            <h1>Subscribe To Our Newsletter</h1>
+            <form>
+                <input type="email" placeholder="Enter Email..." required>
+                <button type="submit" class="button_1">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="main">
+        <div class="container">
+            <article id="main-col">
+                <h1 class="page-title">Explore Our Services</h1>
+                
+                <button class="check-btn" onclick="alert('Coming Soon')">Check</button>
+                
+                <ul id="services">
+                    <li>
+                        <h3>Refer and Earn Discounts</h3>
+                        <p>Refer others to DataWave.NG and earn discounts on your next purchase. <strong>Coming Soon</strong></p>
+                        <button class="check-btn" onclick="alert('Coming Soon')">Check</button>
+                    </li>
+                    <li>
+                        <h3>Data Plans for All Networks</h3>
+                        <ul>
+                            <li>MTN <img src="img/mtn.png" alt="MTN"></li>
+                            <li>GLO <img src="img/glo.png" alt="GLO"></li>
+                            <li>AIRTEL <img src="img/airtel.png" alt="AIRTEL"></li>
+                            <li>9MOBILE <img src="img/9mobile.png" alt="9MOBILE"></li>
+                        </ul>
+                        <button class="check-btn" onclick="alert('Coming Soon')">Check</button>
+                    </li>
+                    <li>
+                        <h3>Sign Up for Updates</h3>
+                        <ul>
+                            <li><a href="https://wa.me/yourwhatsappnumber" target="_blank">Join our WhatsApp group for giveaways</a></li>
+                            <li>Website updates</li>
+                            <li>Grow your business with DataWave.NG</li>
+                            <li>Exclusive offers and more</li>
+                        </ul>
+                        <button class="check-btn" onclick="alert('Coming Soon')">Check</button>
+                    </li>
+                </ul>
+            </article>
+
+            <aside id="sidebar">
+                <div class="dark">
+                    <h3>Get A Quote</h3>
+                    <form class="quote">
+                        <div>
+                            <label>Name</label><br>
+                            <input type="text" placeholder="Name" required>
+                        </div>
+                        <div>
+                            <label>Email</label><br>
+                            <input type="email" placeholder="Email Address" required>
+                        </div>
+                        <div>
+                            <label>Message</label><br>
+                            <textarea placeholder="Message" required></textarea>
+                        </div>
+                        <button class="button_1" type="submit">Send</button>
+                    </form>
+                </div>
+            </aside>
+        </div>
+    </section>
+    
+    <footer>
+        <p>DataWave.NG, Copyright &copy; 2024</p>
+    </footer>
+</body>
+</html>
